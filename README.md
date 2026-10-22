@@ -8,14 +8,17 @@ This repository documents Karl's use of **Guild Members** and **Message Content*
 
 - [Application overview](request.md)
 - [Intent-to-function use cases](use-cases.md)
+- [Source review and migration status — October 22, 2026](review-status.md)
 
-## Migration status
+## Current source status
 
-TGC plans to migrate Karl's prefix commands to Discord's native slash commands, with command visibility restricted to the appropriate roles. The migration is **planned, not completed**. The use-case tables describe the access that would remain after that migration, with the other workflows preserved.
+The October 22, 2026 source review found **56 native slash-command definitions** in Karl **3.0.0.168**. The reviewed commands have been migrated in code. Automatic prefix help is disabled, and the reviewed command names have no message-based execution fallback. Restricted commands have execution checks in Karl; their role/user visibility must also be configured through Discord Integrations.
 
-Command arguments and files submitted through native slash commands are excluded from the Message Content request. The remaining entries cover member events, member enumeration, automatic processing of ordinary server messages, and historical message/attachment access.
+This confirms implementation in the reviewed checkout. **Production deployment, Discord registration, role visibility, and live behavior were not verified in this documentation review.** The [review record](review-status.md) identifies the source revision and existing local edits included in the review.
 
-This is an initial documentation draft based on source review. It is not a claim of Discord approval or completed live testing. Screenshots, videos, and finalized data-handling answers have not yet been added.
+Command arguments and files submitted through native slash commands are excluded from the Message Content inventory. The remaining entries cover member events, member enumeration, automatic processing of ordinary server messages, and historical message/attachment access. A newly added command-audit worker also detects attempts to use old text commands; that detection still reads ordinary message content, even though the migrated commands do not execute from those messages.
+
+This is working review documentation based on source inspection. It is not a claim of Discord approval or completed live testing. Screenshots, videos, alternatives analysis, and finalized data-handling answers have not yet been added.
 
 ## Discord references
 

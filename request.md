@@ -13,11 +13,11 @@ Memberflow is central to TGC's staff coordination. Staff use Karl's scheduled gr
 
 **Guild Presences is excluded.**
 
-## Planned command migration
+## Native command implementation
 
-TGC plans to replace Karl's message-prefix commands with Discord's native slash commands and restrict command visibility by role. This work has not yet been implemented or live-verified.
+The October 22, 2026 review of Karl 3.0.0.168 found 56 native slash-command definitions. The reviewed command migration is implemented in source, including interaction arguments, native attachment options, execution access checks, and startup registration safeguards. Production registration and live role/user visibility have not been verified by this documentation review.
 
-The [use-case tables](use-cases.md) describe the remaining access after that migration. Receiving a slash command's arguments or uploaded files is not included as a Message Content use case.
+The [use-case tables](use-cases.md) describe the remaining source dependencies. Receiving a slash command's arguments or uploaded files is not included as a Message Content use case. The source still parses attempted old text commands for audit receipts; this is separate from executing commands. See the [review record](review-status.md).
 
 ## Guild Members
 
@@ -25,9 +25,15 @@ Karl uses member join, leave, and update events for membership records, nickname
 
 ## Message Content
 
-After the planned slash-command migration, the remaining documented uses concern ordinary server messages: edit/delete records, passive processing of bridged ESO chatter, preserving staff-announcement text in ACK audits, historical channel/thread archives, ticket discussion archives, historical attachment retrieval, and image-evidence preservation during compromised-account response.
+The remaining documented uses concern ordinary server messages: edit/delete records, passive processing of bridged ESO chatter, preserving staff-announcement text in ACK audits, historical channel/thread archives, ticket discussion archives, historical attachment retrieval, image-evidence preservation during compromised-account response, and detection of attempted old text commands for command-audit receipts.
 
 Incoming DMs and Karl's own messages are not presented as requiring Message Content. Merely deleting a message by author and time is also not presented as requiring Message Content; the compromised-account entry concerns reading and preserving its image attachments.
+
+## Command-audit records
+
+The current source adds a local SQLite receipt ledger and a notification outbox. Receipts record the invocation kind, invocation ID, UTC time, user ID, guild/channel IDs when present, command name, and notification state. Slash receipts come from interaction data and do not require Message Content. Attempted text-command receipts use the message parser and record a recognized command name or `unknown`.
+
+The receipt-building code does not store command arguments, raw message bodies, attachment contents/URLs, or interaction tokens. This describes the command-audit worker only: other Karl systems, including moderation evidence, tickets, and ACK records, have their own storage behavior. Production retention, encryption at rest, backup practices, and deletion handling are not established by this source review.
 
 ## Supporting use cases and evidence
 

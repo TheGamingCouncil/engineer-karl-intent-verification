@@ -1,6 +1,6 @@
 # Engineer Karl — Privileged Intent Use Cases
 
-These tables describe the access Karl would retain **after the planned migration from prefix commands to native slash commands**, with other workflows preserved. The migration is not yet completed. TGC function names refer to the existing implementation.
+These tables were rechecked against Karl **3.0.0.168** on **October 22, 2026**. The reviewed checkout now defines **56 native slash commands**. The tables describe its remaining privileged-intent dependencies; they do not claim that the reviewed source has been deployed or that Discord registration/live behavior has been verified. TGC function names refer to the current source implementation. See the [review record](review-status.md).
 
 Command arguments and files submitted through slash commands are excluded from Message Content. Guild Presences is excluded entirely. These entries are source-based use cases; runtime screenshots/videos and alternatives analysis are not yet included.
 
@@ -56,10 +56,13 @@ Message Content controls protected fields within message objects; it is not the 
 | Message Content | `Get Channel Messages` | `_archive_ticket_channel`, `karl_close` | Preserve ordinary human-authored discussion and attachments in ticket channels and child threads before closure. |
 | Message Content | `Get Channel Messages` | `download_thread_files` | Download files attached to ordinary historical thread messages. |
 | Message Content | `Get Channel Messages` | `karl_compromised` | Collect and preserve image attachments from a compromised account's recent server messages before removing those messages. |
+| Message Content | `MESSAGE_CREATE` | `CommandAudit.on_message`, `CommandAudit.record_prefix` | Detect attempted old text commands in ordinary server messages and save a command-name receipt for staff auditing, even though migrated commands no longer execute through that path. Arguments, raw message bodies, attachments, and tokens are not stored in these receipts. |
 
-## Uses removed from the Message Content inventory by the planned migration
+## Native interaction uses excluded from the Message Content inventory
 
-Wallet commands, duty submissions, PTO claims, moderation submissions, staff ticket replies, reminders, and ESO export uploads no longer require Message Content for their command arguments or submitted files when implemented as native slash commands. Historical-message and automatic-monitoring uses above remain separate.
+Wallet commands, duty submissions, PTO claims, moderation submissions, staff ticket replies, reminders, and ESO export uploads use native interaction arguments/attachment options in the reviewed source. They do not require Message Content for those inputs. Native command-audit receipts use `INTERACTION_CREATE` metadata and likewise do not require Message Content. Historical-message, automatic-monitoring, and attempted text-command auditing uses above remain separate.
+
+Role-gated native command execution uses interaction-provided member roles and Karl's access checks; this is not itself another Guild Members use case. The contribution reaction whitelist uses reaction-provided member information when available and a cache fallback; it is not listed as a new standalone privileged-intent requirement. Incoming DMs, Karl-authored messages, and individual member lookups remain subject to Discord's documented exceptions/distinctions.
 
 ## Discord API references
 
