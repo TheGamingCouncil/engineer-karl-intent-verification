@@ -8,11 +8,11 @@ This repository documents Karl's use of **Guild Members** and **Message Content*
 
 - [Application overview](request.md)
 - [Intent-to-function use cases](use-cases.md)
-- [Source review and migration status — October 22, 2026](review-status.md)
+- [Source review and migration status — October 26, 2026](review-status.md)
 
 ## Current source status
 
-The October 22, 2026 source review found **56 native slash-command definitions** in Karl **3.0.0.168**. The reviewed commands have been migrated in code. Automatic prefix help is disabled, and the reviewed command names have no message-based execution fallback. Restricted commands have execution checks in Karl; their role/user visibility must also be configured through Discord Integrations.
+The October 26, 2026 source review found **56 native slash-command definitions** in Karl **3.0.0.170**. This count includes ten commands explicitly described as broken, discarded, or not to be used; those commands are excluded as active intent use cases. The [retirement check](review-status.md#retired-and-discouraged-features) identifies them and the two retired command names. Automatic prefix help is disabled, and the reviewed command names have no message-based execution fallback. Restricted commands have execution checks in Karl; their role/user visibility must also be configured through Discord Integrations.
 
 This confirms implementation in the reviewed checkout. **Production deployment, Discord registration, role visibility, and live behavior were not verified in this documentation review.** The [review record](review-status.md) identifies the source revision and existing local edits included in the review.
 

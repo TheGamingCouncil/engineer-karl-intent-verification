@@ -1,8 +1,10 @@
 # Engineer Karl — Privileged Intent Use Cases
 
-These tables were rechecked against Karl **3.0.0.168** on **October 22, 2026**. The reviewed checkout now defines **56 native slash commands**. The tables describe its remaining privileged-intent dependencies; they do not claim that the reviewed source has been deployed or that Discord registration/live behavior has been verified. TGC function names refer to the current source implementation. See the [review record](review-status.md).
+These tables were rechecked against Karl **3.0.0.170** on **October 26, 2026**. The reviewed checkout defines **56 native slash commands**, including ten explicitly discouraged commands that are excluded as active use cases. The tables describe the remaining privileged-intent dependencies; they do not claim that the reviewed source has been deployed or that Discord registration/live behavior has been verified. TGC function names refer to the current source implementation. See the [review record](review-status.md).
 
 Command arguments and files submitted through slash commands are excluded from Message Content. Guild Presences is excluded entirely. These entries are source-based use cases; runtime screenshots/videos and alternatives analysis are not yet included.
+
+The [retirement check](review-status.md#retired-and-discouraged-features) excludes the old budget, Velothi parsing, event-logging, and other discouraged command uses. Broken manual `calcflow` commands are not the scheduled memberflow system; the discouraged `contribution_post` command is not the automatic contest worker. Both background systems still have startup callers. No function in the tables below was found removed in the current source.
 
 ## Guild Members
 

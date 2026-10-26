@@ -15,7 +15,7 @@ Memberflow is central to TGC's staff coordination. Staff use Karl's scheduled gr
 
 ## Native command implementation
 
-The October 22, 2026 review of Karl 3.0.0.168 found 56 native slash-command definitions. The reviewed command migration is implemented in source, including interaction arguments, native attachment options, execution access checks, and startup registration safeguards. Production registration and live role/user visibility have not been verified by this documentation review.
+The October 26, 2026 review of Karl 3.0.0.170 found 56 native slash-command definitions, including ten commands explicitly described as broken, discarded, or not to be used. Those discouraged features are excluded as active intent use cases; see the [retirement check](review-status.md#retired-and-discouraged-features). The reviewed command migration is implemented in source, including interaction arguments, native attachment options, execution access checks, and startup registration safeguards. Production registration and live role/user visibility have not been verified by this documentation review.
 
 The [use-case tables](use-cases.md) describe the remaining source dependencies. Receiving a slash command's arguments or uploaded files is not included as a Message Content use case. The source still parses attempted old text commands for audit receipts; this is separate from executing commands. See the [review record](review-status.md).
 

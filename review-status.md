@@ -1,11 +1,12 @@
-# Source Review — October 22, 2026
+# Source Review — October 26, 2026
 
 ## Reviewed source
 
-- Karl version: **3.0.0.168**.
+- Karl version: **3.0.0.170**.
 - Source repository: `TheGamingCouncil/engineer_karl_disc`.
-- Source HEAD: `f8ed349bf1598b67e2bb038b20942c19ecfedfe3`.
-- Scope: the current working copy, including existing uncommitted source edits in `hourly_whispers.py`, `karl.py`, `ro_leaderboard.py`, and `tgc_addon_sync.py`.
+- Source HEAD: `6992eaad67e0be78ad7c050829b79c4d0d8b89e5`.
+- Comparison baseline: the October 22 review at `f8ed349bf1598b67e2bb038b20942c19ecfedfe3`.
+- Scope: the current working copy, including existing uncommitted source edits in `hourly_whispers.py`, `karl.py`, `ro_leaderboard.py`, and `tgc_addon_sync.py`, and local production modules `access_audit_post.py` and `public_leader_styles.py`.
 - The audit parsed all **31 production Python modules**, inspected native registration and command-audit wiring, and rechecked the documented member-event, roster, message, archive, and attachment paths.
 - Runtime CSVs, caches, member exports, credentials, keys, and evidence files were not copied into this public repository. No bot source or runtime data was changed by the documentation update.
 
@@ -23,11 +24,42 @@
 | Contest reactions | StaffPlus members are permitted on live contest posts, and the snapshot whitelist also checks StaffPlus. The code uses reaction-provided member data with a cache fallback. | Did not inflate this into a new standalone privileged-intent requirement. |
 | Memberflow and staff coordination | The memberflow monitor, scheduled reports, role-directed alerts/ACK recipient snapshots, staff eligibility, and zero-activity population checks remain in the source. | Preserved the existing memberflow/staff coordination use cases. |
 | Presence | `intents.presences` remains false. | Guild Presences remains excluded. |
+| Changes after October 22 | Native sync uploads accept modular `TGCSync.lua` exports alongside legacy exports and retain upload messages for debugging. Public command output uses standalone messages, and generic completion replies were removed. | These changes do not introduce a privileged-intent use case for interaction inputs. Upload retention is separate from the command-audit ledger's metadata-only storage. |
+
+## Retired and discouraged features
+
+The October 26 follow-up checked source history, the native command manifest and callbacks in `slash_commands.py`, event handlers, and background startup in `karl.py`. Finding a legacy function definition alone was not treated as evidence of current use.
+
+Two command names are explicitly retired in `RETIRED_COMMAND_NAMES`:
+
+| Retired command | Current replacement |
+|---|---|
+| `karl_credit` | `karl_report` with the CREDIT choice. |
+| `karlkick` | `karl_kick`. |
+
+The current `COMMAND_DESCRIPTIONS` explicitly discourages ten further commands:
+
+| Feature | Commands | Source status |
+|---|---|---|
+| Manual memberflow calculations | `calcflow`, `calcflowestimated` | Broken; do not use. |
+| Old report check | `karl_report_check` | Broken; do not use. |
+| Budget and bounty display | `karl_budget` | Discarded. |
+| Status command | `karl_status` | Broken; do not use. |
+| Role-permission display | `check_mfa_perms` | Do not use. |
+| Former Velothi parse standards | `vel`, `velcheck` | Legacy; do not use. |
+| Event and voice-attendance logging command | `log` | Discarded. |
+| Manual contribution-post command | `contribution_post` | Do not use. |
+
+These ten commands still have native callback definitions. They are excluded as active intent use cases because of their explicit source descriptions; this is not a claim that their implementation has been deleted. Neither the retired names nor these discouraged commands appears as a use-case function in the current intent tables, so this check did not remove table rows.
+
+The scheduled memberflow system is separate: `karl.on_ready` starts `monitor_memberflow`, which calls `send_memberflow_report`. Likewise, it starts `monitor_contribution_post`, which maintains contest posts, staffing posts, and contest-channel permissions independently of the discouraged manual command. Their member and role dependencies remain in the tables.
+
+Comparing top-level function definitions across the 31 production modules with the October 22 source revision found no removed functions. Every function named in the current tables remains present; the review traced their use through native callbacks, member/message events, background workers, or those workers' helpers. This establishes source wiring, not production usage frequency or successful execution.
 
 ## Inventory
 
 - **Guild Members:** 28 use-case rows, retained after rechecking the current functions and event/roster paths.
-- **Message Content:** 12 use-case rows, including the new attempted text-command audit row.
+- **Message Content:** 12 use-case rows, including attempted text-command auditing, which remains wired despite the removal of prefix execution for reviewed commands.
 - The four columns remain: **Privileged intent / Discord API event or endpoint / TGC function / Use case**.
 
 The memberflow report combines scheduled member-count snapshots, FF-specific join classification, and stored RO activity. The Guild Members rows identify member events and complete-population classification/ACK needs; they do not imply that every aggregate count, report send, or database calculation independently requires that intent.
