@@ -25,7 +25,9 @@
 | GM-16 | We have a nightly leaderboards of staff recruitment accomplished during the day. | The Discord function call allows us to identify the staff members on the team that does this task so we can build this leaderboard. |
 | GM-14 | We create a nightly leaderboard of staff members that have reached out to new members. To do this, we need to know who is responsible to be doing this community outreach. | Discord's function call allows us to identify the staff members that are on the team that does community outreach so we can build our leaderboard. |
 | GM-01 | We require Discord for guild membership. New members get removed from our guilds in-game if they do not join Discord. This tells the staff when they join so they can promote in-game. It also creates an account that can be linked with our Minecraft server and website for the user. Lastly, it helps staff understand which members are new so they can reach out to and do the knitting of a tightly-knit community. | The Discord function is used to tell us when a new member joins, their developer ID for use as a foreign key in other SQL tables, and what their name is. |
+| GM-02 | We require Discord membership for membership in any of our in-game guilds on various MMOs or game servers. This function attempts to set their Discord nickname according to our standard member naming policies. It can be wrong, and staff will manually correct it later. | The Discord member join event starts onboarding/setup automatically without requiring a command. |
 | GM-03 | Leave events identify who left and when. We require Discord membership, so if they leave our Discord, we remove them from out community in-game as well. It also helps us identify when someone like a staff or event leader leaves, that way we can cover things they were supposed to be doing and may not have been handed off. Lastly, it will revoke login access to staff recruitment tools and the website. | The Discord function tells us who leaves, their developer ID which is used as a foreign key linking platforms and SQL tables, and triggers the closure of their TGC login access. |
+| GM-06 | Log nickname changes | Before-and-after names show what changed. |
 | GM-05 | Most of our members are coming from The Elder Scrolls Online; however, lately much progress growing has been being made by our Final Fantasy guild. This lets us know how many joined from the FF guild to differentiate progress, credit, and points between the staff teams on the two games. | The Discord function allows us to tell who is a member of our Final Fantasy guild versus who is a member of our Elder Scrolls Online guild. |
 
 <details>
@@ -38,7 +40,9 @@
 | GM-16 | Guild Members: `Request Guild Members` | `_whisper_zero_members` |
 | GM-14 | Guild Members: `Request Guild Members` | `_qualifying_leaderboard_member_ids` |
 | GM-01 | Guild Members: `GUILD_MEMBER_ADD` | `on_member_join` |
+| GM-02 | Guild Members: `GUILD_MEMBER_ADD` | `set_initial_nickname` |
 | GM-03 | Guild Members: `GUILD_MEMBER_REMOVE` | `on_member_remove` |
+| GM-06 | Guild Members: `GUILD_MEMBER_UPDATE` | `log_member_update` |
 | GM-05 | Guild Members: `Request Guild Members` | `_count_ff_joins_for_date`, `send_memberflow_report` |
 
 </details>
@@ -140,9 +144,6 @@
 
 | ID | Use case | Why access is needed |
 |---|---|---|
-| GM-02 | We require Discord membership for membership in any of our in-game guilds on various MMOs or game servers. This function attempts to set their Discord nickname according to our standard member naming policies. It can be wrong, and staff will manually correct it later. | The Discord member join event starts onboarding/setup automatically without requiring a command. |
-| GM-04 | Record departing members' identities | Departure context preserves the former server identity. |
-| GM-06 | Log nickname changes | Before-and-after names show what changed. |
 | GM-07 | Log role changes | Before-and-after role sets identify additions and removals. |
 | GM-08 | Alert on configured self-role changes | Member events trigger the check; audit logs verify the actor. |
 | GM-09 | Sync member identities and ranks | The roster includes members who never use commands. |
@@ -155,9 +156,6 @@
 
 | ID | Intent / Discord API | Our function |
 |---|---|---|
-| GM-02 | Guild Members: `GUILD_MEMBER_ADD` | `set_initial_nickname` |
-| GM-04 | Guild Members: `GUILD_MEMBER_REMOVE` | `set_alias_record`, `left_message` |
-| GM-06 | Guild Members: `GUILD_MEMBER_UPDATE` | `log_member_update` |
 | GM-07 | Guild Members: `GUILD_MEMBER_UPDATE` | `log_member_update` |
 | GM-08 | Guild Members: `GUILD_MEMBER_UPDATE` | `Chex_stop_it` |
 | GM-09 | Guild Members: `Request Guild Members` | `_sync_discord_users` |
