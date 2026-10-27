@@ -61,12 +61,12 @@
 
 **Intent:** Guild Members; Message Content
 
-**Why:** Karl helps staff coordinate work, track completed tasks, and recognize contributions. Current roles determine who must acknowledge instructions, who belongs in staff reports, and who should be involved in staff contests.
+**Why:** Karl helps staff coordinate work, track completed tasks, and recognize contributions. Current roles determine who must be involved in tasks, who should acknowledge important announcements, who belongs in staff reports, and who should be involved in staff contests.
 
 | ID | Use case | Why access is needed |
 |---|---|---|
-| GM-12 | Set expected ACK recipients | We require messages of importance to be acknowledged through an "ACK" emoji reaction by staff. This function helps us identify who in our team should be on the hook for reading these messages. |
-| GM-13 | Report missing ACKs | This is a roster of people that have failed to do the "ACK" reaction mentioned above so we can reach out to the users individually to follow-up. |
+| GM-12 | We require messages of importance to be acknowledged through an "ACK" emoji reaction by staff. This function helps us identify who in our team should be on the hook for reading these messages. | The Discord function tells us who is on the staff team that important messages are going out to and thus should be acknowledging the messages. |
+| GM-13 | This is a roster of people that have failed to do the "ACK" reaction mentioned above so we can reach out to the users individually to follow-up with, individually train, etc. | The Discord function allows us to see members that are part of staff teams associated with announcements. |
 | MC-05 | Keep the staff message being acknowledged | Karl saves the original staff-written message with the ACK record so we can see what people were asked to read and acknowledge. |
 | GM-17 | Notify role members individually | This can be used for several purposes. 1 - Let us know who is in a role in a public way, as many members are non-technical and won't know to click on a role or go to server settings. 2 - It will ping members if authorized which can be used to bring people into threads or get their attention individually as an alternative to pinging a role that has role pings disabled. Karl has programming on who is allowed to use this command or not, which is an added level of security than just allowing anyone to @ mention a role. |
 | GM-18 | Limit reminder role size | Karl has a functionality similar to Microsoft-To Do. This prevents users from being able to abuse our ping functionality in here to spam the server recklessly or maliciously. |
