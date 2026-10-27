@@ -140,15 +140,15 @@
 
 **Intent:** Guild Members
 
-**Why:** Staff must continue to recognize members as names and roles change. Karl maintains identity history, role records, and ESO qualifications, including for members who never run commands. We also keep track of who was somewhere at a certain time in the case of rule enforcement.
+**Why:** Staff must continue to recognize members as names and roles change. Karl maintains identity history, role records, and ESO qualifications, including for members who never run commands. We also keep track of who was somewhere at a certain time in the case of rule enforcement. Members log into our website with their Discord account, and their Discord roles determine their level of access.
 
 | ID | Use case | Why access is needed |
 |---|---|---|
 | GM-07 | When users' roles are updated, we log a change. There has been people abusing roles and "spying" on us in the past, they have given themselves premium tiers that they didn't earn, and this also leaves us a papertrail of who had which roles when they return to the server after we go through our account compromise SOP. | The Discord functions show us roles before and after a user being updated. |
 | GM-08 | We have one user that had been abusing his role permissions to give himself roles he absolutely should not have been having, persisting after several warnings. This function pings leadership in a private channel to report it to us. | Discord functions show us the roles of the user that were added and alert us. |
 | GM-09 | We do a weekly database sync between our Discord, website, Minecraft server, FF plugins, and ESO addons. | Discord functions show us the member data that we are looking for, specifically names, dev ID, which games they play, and the ranks they should have in-game. |
-| GM-10 | Sync ESO qualifications | Current roles identify members' DPS, healer, tank, and parse qualifications. |
-| GM-11 | Sync database role records | Current assignments reveal changes to stored roles. |
+| GM-10 | Members can sign up for raids on the website. However, we have a tier system that shows what players are ready for certain levels of content. This function inputs their tiers into the website to grant them access to difficult in-game content. | The Discord function helps us identify the tier healer, tank, or dps a user is by their role in Discord for deposit into the database/website. |
+| GM-11 | Our website unlocks certain content such as staff tools to certain roles. This function deposits users roles into our database/website so users can access panels such as those staff tools. | The Discord functions assist with revealing changed roles since the last database sync. |
 
 <details>
 
