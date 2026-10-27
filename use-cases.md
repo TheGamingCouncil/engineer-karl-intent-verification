@@ -18,17 +18,17 @@
 
 **Why:** After leadership returned from deployment, our once-active in-game guilds had nearly emptied. Nightly whisper and RO leaderboards show the staff's work. Memberflow reports show whether the community is growing or shrinking. We use these reports to assign work and assess results.
 
-| Use case | Why access is needed |
-|---|---|
-| Report recruitment work by responsible staff | We need to know which staff are expected to recruit so Karl can report their work. |
-| Report staff with zero whispers | The roster reveals staff members that are neglecting roles they committed to. |
-| Nightly RO leaderboard | Nightly we create a leaderboard of staff members that have reached out to new members. To do this, we need to know who is responsible to be doing this community outreach. |
-| MC-03: Credit `=D` messages from in-game chat | Karl reads messages copied from ESO into Discord, finds `=D`, matches the ESO name to a Discord member, and records duty credit. |
-| MC-04: Alert staff to recruitment-related chat | Karl reads messages copied from ESO into Discord and alerts staff when they contain words such as “invite,” “stop,” or “spam.” |
-| Match bridged ESO names | The fallback scans Discord names; member search is an alternative. |
-| Record Discord arrivals | Shows staff the names of people joining Discord each day, so they can follow up with those new members. |
-| Record Discord departures | Leave events identify who left and when. We require Discord membership, so if they leave our Discord, we kick them in-game as well. It also helps us identify when someone like a staff or event leader leaves, that way we can cover things they were supposed to be doing. |
-| Count FF-tagged joins | Join dates and FF roles identify the daily guild-specific population. |
+| ID | Use case | Why access is needed |
+|---|---|---|
+| GM-15 | Report recruitment work by responsible staff | We need to know which staff are expected to recruit so Karl can report their work. |
+| GM-16 | Report staff with zero whispers | The roster reveals staff members that are neglecting roles they committed to. |
+| GM-14 | Nightly RO leaderboard | Nightly we create a leaderboard of staff members that have reached out to new members. To do this, we need to know who is responsible to be doing this community outreach. |
+| MC-03 | Credit `=D` messages from in-game chat | Karl reads messages copied from ESO into Discord, finds `=D`, matches the ESO name to a Discord member, and records duty credit. |
+| MC-04 | Alert staff to recruitment-related chat | Karl reads messages copied from ESO into Discord and alerts staff when they contain words such as “invite,” “stop,” or “spam.” |
+| GM-25 | Match bridged ESO names | The fallback scans Discord names; member search is an alternative. |
+| GM-01 | Record Discord arrivals | Shows staff the names of people joining Discord each day, so they can follow up with those new members. |
+| GM-03 | Record Discord departures | Leave events identify who left and when. We require Discord membership, so if they leave our Discord, we kick them in-game as well. It also helps us identify when someone like a staff or event leader leaves, that way we can cover things they were supposed to be doing. |
+| GM-05 | Count FF-tagged joins | Join dates and FF roles identify the daily guild-specific population. |
 
 <details>
 
@@ -50,19 +50,20 @@
 
 **Demo:**
 
+
 ## Staff coordination and acknowledgments
 
 **Intent:** Guild Members; Message Content
 
 **Why:** Staff need clear instructions and follow-through. Karl identifies the expected audience, records acknowledgments, and shows who has not responded—including to memberflow alerts.
 
-| Use case | Why access is needed |
-|---|---|
-| Set expected ACK recipients | Role membership identifies everyone expected to respond. |
-| Report missing ACKs | The saved recipient roster includes people who never react. |
-| Preserve ACK instructions | Announcement text records what staff acknowledged; Karl-authored alerts are exempt. |
-| Notify role members individually | The roster identifies human recipients. A role ping is an alternative. |
-| Limit reminder role size | Complete membership prevents undercounting the 100-member limit. |
+| ID | Use case | Why access is needed |
+|---|---|---|
+| GM-12 | Set expected ACK recipients | Role membership identifies everyone expected to respond. |
+| GM-13 | Report missing ACKs | The saved recipient roster includes people who never react. |
+| MC-05 | Preserve ACK instructions | Announcement text records what staff acknowledged; Karl-authored alerts are exempt. |
+| GM-17 | Notify role members individually | The roster identifies human recipients. A role ping is an alternative. |
+| GM-18 | Limit reminder role size | Complete membership prevents undercounting the 100-member limit. |
 
 <details>
 
@@ -80,22 +81,23 @@
 
 **Demo:**
 
+
 ## Member identity, role history, and records
 
 **Intent:** Guild Members
 
 **Why:** Staff must recognize members as names and roles change. Karl maintains identity history, role records, and ESO qualifications, including for members who never run commands.
 
-| Use case | Why access is needed |
-|---|---|
-| Set new-member nicknames | Join events start setup without requiring a command. |
-| Record departing members' identities | Departure context preserves the former server identity. |
-| Log nickname changes | Before-and-after names show what changed. |
-| Log role changes | Before-and-after role sets identify additions and removals. |
-| Alert on configured self-role changes | Member events trigger the check; audit logs verify the actor. |
-| Sync member identities and ranks | The roster includes members who never use commands. |
-| Sync ESO qualifications | Current roles identify members' DPS, healer, tank, and parse qualifications. |
-| Sync database role records | Current assignments reveal changes to stored roles. |
+| ID | Use case | Why access is needed |
+|---|---|---|
+| GM-02 | Set new-member nicknames | Join events start setup without requiring a command. |
+| GM-04 | Record departing members' identities | Departure context preserves the former server identity. |
+| GM-06 | Log nickname changes | Before-and-after names show what changed. |
+| GM-07 | Log role changes | Before-and-after role sets identify additions and removals. |
+| GM-08 | Alert on configured self-role changes | Member events trigger the check; audit logs verify the actor. |
+| GM-09 | Sync member identities and ranks | The roster includes members who never use commands. |
+| GM-10 | Sync ESO qualifications | Current roles identify members' DPS, healer, tank, and parse qualifications. |
+| GM-11 | Sync database role records | Current assignments reveal changes to stored roles. |
 
 <details>
 
@@ -116,20 +118,21 @@
 
 **Demo:**
 
+
 ## Contribution contests, staffing, and PTO
 
 **Intent:** Guild Members
 
 **Why:** Current roles determine participation, access, staffing ratios, and PTO entitlement. Eligible staff must remain included even when they have no recorded activity.
 
-| Use case | Why access is needed |
-|---|---|
-| Include zero-contribution participants | Roles and participation settings establish eligibility beyond activity records. |
-| Classify contest participants | Current roles determine staff and contributor categories. |
-| Calculate staffing ratios | Complete officer and team populations provide the counts. |
-| Maintain contest-channel access | Current roles and participation settings determine individual access. |
-| Award weekly PTO | Role populations identify every eligible member and their highest entitlement. |
-| Report staff PTO balances | Current staff roles establish whose balances to include. |
+| ID | Use case | Why access is needed |
+|---|---|---|
+| GM-19 | Include zero-contribution participants | Roles and participation settings establish eligibility beyond activity records. |
+| GM-20 | Classify contest participants | Current roles determine staff and contributor categories. |
+| GM-21 | Calculate staffing ratios | Complete officer and team populations provide the counts. |
+| GM-22 | Maintain contest-channel access | Current roles and participation settings determine individual access. |
+| GM-23 | Award weekly PTO | Role populations identify every eligible member and their highest entitlement. |
+| GM-24 | Report staff PTO balances | Current staff roles establish whose balances to include. |
 
 <details>
 
@@ -148,17 +151,18 @@
 
 **Demo:**
 
+
 ## Game-service access and public leader identities
 
 **Intent:** Guild Members
 
 **Why:** Connected services need current membership and roles. Events promptly revoke lost sync access and refresh leader identities; periodic checks provide fallbacks.
 
-| Use case | Why access is needed |
-|---|---|
-| Revoke sync keys after departure | Leave events provide prompt cleanup; hourly reconciliation also checks membership. |
-| Revoke sync keys after role-based access loss | Member updates provide prompt revocation; hourly reconciliation remains a fallback. |
-| Refresh public leader identities | Member events accelerate updates; individual lookups and five-minute refreshes remain available. |
+| ID | Use case | Why access is needed |
+|---|---|---|
+| GM-26 | Revoke sync keys after departure | Leave events provide prompt cleanup; hourly reconciliation also checks membership. |
+| GM-27 | Revoke sync keys after role-based access loss | Member updates provide prompt revocation; hourly reconciliation remains a fallback. |
+| GM-28 | Refresh public leader identities | Member events accelerate updates; individual lookups and five-minute refreshes remain available. |
 
 <details>
 
@@ -174,22 +178,23 @@
 
 **Demo:**
 
+
 ## Message records, archives, tickets, and evidence
 
 **Intent:** Message Content
 
 **Why:** Staff need the conversation and files—not just author IDs—when reviewing incidents, closing tickets, or reusing channels. Karl preserves available content before it changes or disappears.
 
-| Use case | Why access is needed |
-|---|---|
-| Record message edits | Text and attachment context show what changed. |
-| Record message deletions | Previously cached content supplies what deletion events omit. |
-| Archive channels and threads | Historical text and attachments preserve the conversation. |
-| Archive before clearing | Content must be read before the source is cleared. |
-| Archive before event-channel reuse | Previous discussion and files must be preserved before reset. |
-| Download historical thread files | Historical attachment records identify the files to retrieve. |
-| Archive closed tickets | Human-authored staff discussion and files need preservation. |
-| Preserve compromised-account evidence | Image attachments must be downloaded before message removal. |
+| ID | Use case | Why access is needed |
+|---|---|---|
+| MC-01 | Record message edits | Text and attachment context show what changed. |
+| MC-02 | Record message deletions | Previously cached content supplies what deletion events omit. |
+| MC-06 | Archive channels and threads | Historical text and attachments preserve the conversation. |
+| MC-07 | Archive before clearing | Content must be read before the source is cleared. |
+| MC-08 | Archive before event-channel reuse | Previous discussion and files must be preserved before reset. |
+| MC-10 | Download historical thread files | Historical attachment records identify the files to retrieve. |
+| MC-09 | Archive closed tickets | Human-authored staff discussion and files need preservation. |
+| MC-11 | Preserve compromised-account evidence | Image attachments must be downloaded before message removal. |
 
 <details>
 
@@ -210,15 +215,16 @@
 
 **Demo:**
 
+
 ## Command-attempt auditing
 
 **Intent:** Message Content
 
 **Why:** Staff audit attempts to use old text commands, even though those commands no longer execute. Receipts retain command metadata without message bodies or arguments.
 
-| Use case | Why access is needed |
-|---|---|
-| Audit old text-command attempts | Recognizing typed command names needs content; native slash receipts do not. |
+| ID | Use case | Why access is needed |
+|---|---|---|
+| MC-12 | Audit old text-command attempts | Recognizing typed command names needs content; native slash receipts do not. |
 
 <details>
 
@@ -231,6 +237,7 @@
 </details>
 
 **Demo:**
+
 
 ## Discord references
 
