@@ -164,7 +164,29 @@
 
 </details>
 
-**Demo:**
+**GM-07 Demo:**
+
+- &lt;Screenshot of bot trashbox role update post where someone was given a role they should not have had&gt;
+
+**GM-08 Demo:**
+
+- &lt;Screenshot of Chex changing his roles and pinging the High Council&gt;
+
+**GM-09 Demo:**
+
+- &lt;Screenshot of Authentication message&gt;
+- &lt;Screenshot of phpmyadmin for MCMMO with dev ids&gt;
+
+**GM-10 Demo:**
+
+- &lt;Screenshot of the cores on the website, note of the sign-up function being a work in progress&gt;
+
+**GM-11 Demo:**
+
+- &lt;Screenshot of leaderboard&gt;
+- &lt;Screenshot of duty manager&gt;
+- &lt;Screenshot of stafftracker uploader&gt;
+- &lt;Screenshot of ppp thing&gt;
 
 ## Game-service access and public leader identities
 
