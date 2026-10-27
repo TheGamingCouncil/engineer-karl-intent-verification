@@ -140,7 +140,7 @@
 
 | ID | Use case | Why access is needed |
 |---|---|---|
-| GM-02 | Set new-member nicknames | Join events start setup without requiring a command. |
+| GM-02 | We require Discord membership for membership in any of our in-game guilds on various MMOs or game servers. This function attempts to set their Discord nickname according to our standard member naming policies. It can be wrong, and staff will manually correct it later. | The Discord member join event starts onboarding/setup automatically without requiring a command. |
 | GM-04 | Record departing members' identities | Departure context preserves the former server identity. |
 | GM-06 | Log nickname changes | Before-and-after names show what changed. |
 | GM-07 | Log role changes | Before-and-after role sets identify additions and removals. |
