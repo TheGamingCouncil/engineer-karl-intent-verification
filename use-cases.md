@@ -21,8 +21,8 @@
 
 | ID | Use case | Why access is needed |
 |---|---|---|
-| GM-15 | Report recruitment work by responsible staff | We need to know which staff are expected to recruit so Karl can report their work. |
-| GM-16 | Report staff with zero whispers | The roster reveals staff members that are neglecting roles they committed to. |
+| GM-15 | Live reports of recruitment progress by responsible staff throughout the day. | The Discord function call tells us which staff members are in roles that are expected to recruit so we can record/report progress on their work. |
+| GM-16 | Nightly leaderboards of staff recruitment accomplished during the day. | The roster reveals staff members that are neglecting roles they committed to. |
 | GM-14 | Nightly RO leaderboard | Nightly we create a leaderboard of staff members that have reached out to new members. To do this, we need to know who is responsible to be doing this community outreach. |
 | GM-01 | Record Discord arrivals | Shows staff the names of people joining Discord each day, so they can follow up with those new members. |
 | GM-03 | Record Discord departures | Leave events identify who left and when. We require Discord membership, so if they leave our Discord, we kick them in-game as well. It also helps us identify when someone like a staff or event leader leaves, that way we can cover things they were supposed to be doing. |
