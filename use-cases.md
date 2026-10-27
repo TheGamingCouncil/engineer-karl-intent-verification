@@ -1,9 +1,8 @@
 # Engineer Karl — Privileged Intent Use Cases
 
 - [Recruitment, ROs, and memberflow](#recruitment-ros-and-memberflow)
-- [Staff coordination and acknowledgments](#staff-coordination-and-acknowledgments)
+- [Staffing and Project Management](#staffing-and-project-management)
 - [Member identity, role history, and records](#member-identity-role-history-and-records)
-- [Contribution contests, staffing, and PTO](#contribution-contests-staffing-and-pto)
 - [Game-service access and public leader identities](#game-service-access-and-public-leader-identities)
 - [Message records, archives, tickets, and evidence](#message-records-archives-tickets-and-evidence)
 - [Command-attempt auditing](#command-attempt-auditing)
@@ -25,7 +24,6 @@
 | GM-15 | Report recruitment work by responsible staff | We need to know which staff are expected to recruit so Karl can report their work. |
 | GM-16 | Report staff with zero whispers | The roster reveals staff members that are neglecting roles they committed to. |
 | GM-14 | Nightly RO leaderboard | Nightly we create a leaderboard of staff members that have reached out to new members. To do this, we need to know who is responsible to be doing this community outreach. |
-| GM-25 | Match bridged ESO names | The fallback scans Discord names; member search is an alternative. |
 | GM-01 | Record Discord arrivals | Shows staff the names of people joining Discord each day, so they can follow up with those new members. |
 | GM-03 | Record Discord departures | Leave events identify who left and when. We require Discord membership, so if they leave our Discord, we kick them in-game as well. It also helps us identify when someone like a staff or event leader leaves, that way we can cover things they were supposed to be doing. |
 | GM-05 | Count FF-tagged joins | Join dates and FF roles identify the daily guild-specific population. |
@@ -39,7 +37,6 @@
 | GM-15 | Guild Members: `Request Guild Members` | `_recruitment_message_member_ids` |
 | GM-16 | Guild Members: `Request Guild Members` | `_whisper_zero_members` |
 | GM-14 | Guild Members: `Request Guild Members` | `_qualifying_leaderboard_member_ids` |
-| GM-25 | Guild Members: `Request Guild Members` | `find_user_id_by_nickname` |
 | GM-01 | Guild Members: `GUILD_MEMBER_ADD` | `on_member_join` |
 | GM-03 | Guild Members: `GUILD_MEMBER_REMOVE` | `on_member_remove` |
 | GM-05 | Guild Members: `Request Guild Members` | `_count_ff_joins_for_date`, `send_memberflow_report` |
@@ -48,12 +45,27 @@
 
 **Demo:**
 
+&lt;Text here will be replaced and is just a note for myself on what to do for the demos.&gt;
 
-## Staff coordination and acknowledgments
+**GM-15, GM-16 Demo:**
+
+- &lt;Screenshot: Live Whisper Count&gt;
+- &lt;Screenshot: Total Whisper Count&gt;
+- &lt;Screenshot: Nightly Whisper Leaderboard&gt;
+
+**GM-14 Demo:**
+
+- &lt;Screenshot: Nightly RO Leaderboard&gt;
+
+**GM-01, GM-03, GM-05 Demo:**
+
+- &lt;Screenshot: Nightly memberflow leaderboard&gt;
+
+## Staffing and Project Management
 
 **Intent:** Guild Members; Message Content
 
-**Why:** Staff need clear instructions and follow-through. Karl identifies the expected audience, records acknowledgments, and shows who has not responded—including to memberflow alerts.
+**Why:** Karl helps staff coordinate work, track completed tasks, and recognize contributions. Current roles determine who must acknowledge instructions, who belongs in staff reports, and who receives contest access or PTO—even when they have no recorded activity.
 
 | ID | Use case | Why access is needed |
 |---|---|---|
@@ -62,6 +74,12 @@
 | MC-05 | Preserve ACK instructions | Announcement text records what staff acknowledged; Karl-authored alerts are exempt. |
 | GM-17 | Notify role members individually | The roster identifies human recipients. A role ping is an alternative. |
 | GM-18 | Limit reminder role size | Complete membership prevents undercounting the 100-member limit. |
+| GM-19 | Include zero-contribution participants | Roles and participation settings establish eligibility beyond activity records. |
+| GM-20 | Classify contest participants | Current roles determine staff and contributor categories. |
+| GM-21 | Calculate staffing ratios | Complete officer and team populations provide the counts. |
+| GM-22 | Maintain contest-channel access | Current roles and participation settings determine individual access. |
+| GM-23 | Award weekly PTO | Role populations identify every eligible member and their highest entitlement. |
+| GM-24 | Report staff PTO balances | Current staff roles establish whose balances to include. |
 
 <details>
 
@@ -74,11 +92,16 @@
 | MC-05 | Message Content: `MESSAGE_CREATE` | `check_ack_audit_trigger` |
 | GM-17 | Guild Members: `Request Guild Members` | `karl_ping` |
 | GM-18 | Guild Members: `Request Guild Members` | `reminder_mentions` |
+| GM-19 | Guild Members: `Request Guild Members` | `_build_contribution_embed_for_window` |
+| GM-20 | Guild Members: `Request Guild Members` | `_contribution_category`, `build_contribution_embed` |
+| GM-21 | Guild Members: `Request Guild Members` | `_member_ids_with_roles`, `build_staff_wanted_embed` |
+| GM-22 | Guild Members: `Request Guild Members`; `GUILD_MEMBER_UPDATE` | `sync_contribution_contest_permissions` |
+| GM-23 | Guild Members: `Request Guild Members` | `karl_PTO_weekly_update` |
+| GM-24 | Guild Members: `Request Guild Members` | `karl_pto_staff` |
 
 </details>
 
 **Demo:**
-
 
 ## Member identity, role history, and records
 
@@ -116,40 +139,6 @@
 
 **Demo:**
 
-
-## Contribution contests, staffing, and PTO
-
-**Intent:** Guild Members
-
-**Why:** Current roles determine participation, access, staffing ratios, and PTO entitlement. Eligible staff must remain included even when they have no recorded activity.
-
-| ID | Use case | Why access is needed |
-|---|---|---|
-| GM-19 | Include zero-contribution participants | Roles and participation settings establish eligibility beyond activity records. |
-| GM-20 | Classify contest participants | Current roles determine staff and contributor categories. |
-| GM-21 | Calculate staffing ratios | Complete officer and team populations provide the counts. |
-| GM-22 | Maintain contest-channel access | Current roles and participation settings determine individual access. |
-| GM-23 | Award weekly PTO | Role populations identify every eligible member and their highest entitlement. |
-| GM-24 | Report staff PTO balances | Current staff roles establish whose balances to include. |
-
-<details>
-
-<summary>Functions and Discord APIs</summary>
-
-| ID | Intent / Discord API | Our function |
-|---|---|---|
-| GM-19 | Guild Members: `Request Guild Members` | `_build_contribution_embed_for_window` |
-| GM-20 | Guild Members: `Request Guild Members` | `_contribution_category`, `build_contribution_embed` |
-| GM-21 | Guild Members: `Request Guild Members` | `_member_ids_with_roles`, `build_staff_wanted_embed` |
-| GM-22 | Guild Members: `Request Guild Members`; `GUILD_MEMBER_UPDATE` | `sync_contribution_contest_permissions` |
-| GM-23 | Guild Members: `Request Guild Members` | `karl_PTO_weekly_update` |
-| GM-24 | Guild Members: `Request Guild Members` | `karl_pto_staff` |
-
-</details>
-
-**Demo:**
-
-
 ## Game-service access and public leader identities
 
 **Intent:** Guild Members; Message Content
@@ -159,6 +148,7 @@
 | ID | Use case | Why access is needed |
 |---|---|---|
 | MC-03 | Credit in-game chat blasts. | Karl reads messages copied from ESO into Discord, finds `=D`, matches the ESO name to a Discord member, and records duty credit. |
+| GM-25 | Match ESO names for MC-03 credit | MC-03 needs this name match to award in-game chat-blast credit to the correct staff member. The fallback scans Discord names; member search is an alternative. |
 | MC-04 | Alert staff to recruitment-related chat | Karl reads messages copied from ESO into Discord and alerts staff when they contain words such as “invite,” “stop,” or “spam.” |
 | GM-26 | Revoke sync keys after departure | Leave events provide prompt cleanup; hourly reconciliation also checks membership. |
 | GM-27 | Revoke sync keys after role-based access loss | Member updates provide prompt revocation; hourly reconciliation remains a fallback. |
@@ -171,6 +161,7 @@
 | ID | Intent / Discord API | Our function |
 |---|---|---|
 | MC-03 | Message Content: `MESSAGE_CREATE` | `blast_credit` |
+| GM-25 | Guild Members: `Request Guild Members` | `find_user_id_by_nickname` |
 | MC-04 | Message Content: `MESSAGE_CREATE` | `blast_credit` |
 | GM-26 | Guild Members: `GUILD_MEMBER_REMOVE` | `revoke_tgc_sync_key_on_departure` |
 | GM-27 | Guild Members: `GUILD_MEMBER_UPDATE` | `revoke_tgc_sync_key_on_permission_removal` |
@@ -179,7 +170,6 @@
 </details>
 
 **Demo:**
-
 
 ## Message records, archives, tickets, and evidence
 
@@ -217,7 +207,6 @@
 
 **Demo:**
 
-
 ## Command-attempt auditing
 
 **Intent:** Message Content
@@ -239,7 +228,6 @@
 </details>
 
 **Demo:**
-
 
 ## Discord references
 
