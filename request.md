@@ -17,11 +17,11 @@ Memberflow is central to TGC's staff coordination. Staff use Karl's scheduled gr
 
 The October 26, 2026 review of Karl 3.0.0.170 found 56 native slash-command definitions, including ten commands explicitly described as broken, discarded, or not to be used. Those discouraged features are excluded as active intent use cases; see the [retirement check](review-status.md#retired-and-discouraged-features). The reviewed command migration is implemented in source, including interaction arguments, native attachment options, execution access checks, and startup registration safeguards. Production registration and live role/user visibility have not been verified by this documentation review.
 
-The [use-case tables](use-cases.md) describe the remaining source dependencies. Receiving a slash command's arguments or uploaded files is not included as a Message Content use case. The source still parses attempted old text commands for audit receipts; this is separate from executing commands. See the [review record](review-status.md).
+The [use-case entries](use-cases.md) describe the remaining source dependencies. Receiving a slash command's arguments or uploaded files is not included as a Message Content use case. The source still parses attempted old text commands for audit receipts; this is separate from executing commands. See the [review record](review-status.md).
 
 ## Guild Members
 
-Karl uses member join, leave, and update events for membership records, nickname/role accountability, and ESO sync-key revocation. It uses complete member and role populations for ACK recipient snapshots, staff eligibility, zero-activity reporting, contribution participation, staffing ratios, and PTO administration. The tables identify each event or member-enumeration operation, Karl function, and associated use case.
+Karl uses member join, leave, and update events for membership records, nickname/role accountability, and ESO sync-key revocation. It uses complete member and role populations for ACK recipient snapshots, staff eligibility, zero-activity reporting, contribution participation, staffing ratios, and PTO administration. Each entry identifies the event or member-enumeration operation, Karl function, use case, and draft reason for access.
 
 ## Message Content
 
@@ -37,6 +37,6 @@ The receipt-building code does not store command arguments, raw message bodies, 
 
 ## Supporting use cases and evidence
 
-See [Intent-to-function use cases](use-cases.md) for the four-column inventory.
+See [Intent-to-function use cases](use-cases.md) for the six-field entries. The draft reasons explain the current dependencies and identify existing fallbacks or possible replacements where relevant. Demo fields are left for TGC to complete.
 
-This overview is a draft, not a submitted application. Alternatives analysis, runtime screenshots/videos, and verified privacy, retention, security, and data-handling answers will be added as the review documentation is completed. This repository does not assert that every listed source dependency independently establishes eligibility for intent access.
+This overview is a draft, not a submitted application. A completed alternatives assessment, runtime screenshots/videos, and verified privacy, retention, security, and data-handling answers will be added as the review documentation is completed. This repository does not assert that every listed source dependency independently establishes eligibility for intent access.

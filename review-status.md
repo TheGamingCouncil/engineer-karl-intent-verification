@@ -50,24 +50,30 @@ The current `COMMAND_DESCRIPTIONS` explicitly discourages ten further commands:
 | Event and voice-attendance logging command | `log` | Discarded. |
 | Manual contribution-post command | `contribution_post` | Do not use. |
 
-These ten commands still have native callback definitions. They are excluded as active intent use cases because of their explicit source descriptions; this is not a claim that their implementation has been deleted. Neither the retired names nor these discouraged commands appears as a use-case function in the current intent tables, so this check did not remove table rows.
+These ten commands still have native callback definitions. They are excluded as active intent use cases because of their explicit source descriptions; this is not a claim that their implementation has been deleted. Neither the retired names nor these discouraged commands appears as a use-case function in the current inventory, so this check did not remove entries.
 
-The scheduled memberflow system is separate: `karl.on_ready` starts `monitor_memberflow`, which calls `send_memberflow_report`. Likewise, it starts `monitor_contribution_post`, which maintains contest posts, staffing posts, and contest-channel permissions independently of the discouraged manual command. Their member and role dependencies remain in the tables.
+The scheduled memberflow system is separate: `karl.on_ready` starts `monitor_memberflow`, which calls `send_memberflow_report`. Likewise, it starts `monitor_contribution_post`, which maintains contest posts, staffing posts, and contest-channel permissions independently of the discouraged manual command. Their member and role dependencies remain in the inventory.
 
-Comparing top-level function definitions across the 31 production modules with the October 22 source revision found no removed functions. Every function named in the current tables remains present; the review traced their use through native callbacks, member/message events, background workers, or those workers' helpers. This establishes source wiring, not production usage frequency or successful execution.
+Comparing top-level function definitions across the 31 production modules with the October 22 source revision found no removed functions. Every function named in the inventory remains present; the review traced their use through native callbacks, member/message events, background workers, or those workers' helpers. This establishes source wiring, not production usage frequency or successful execution.
 
 ## Inventory
 
-- **Guild Members:** 28 use-case rows, retained after rechecking the current functions and event/roster paths.
-- **Message Content:** 12 use-case rows, including attempted text-command auditing, which remains wired despite the removal of prefix execution for reviewed commands.
-- The four columns remain: **Privileged intent / Discord API event or endpoint / TGC function / Use case**.
+- **Guild Members:** 28 use-case entries, retained after rechecking the current functions and event/roster paths.
+- **Message Content:** 12 use-case entries, including attempted text-command auditing, which remains wired despite the removal of prefix execution for reviewed commands.
+- Each entry uses six fields: **Privileged intent / Discord API called or event received / Our function / Use case / Why we need it / Demo**.
 
-The memberflow report combines scheduled member-count snapshots, FF-specific join classification, and stored RO activity. The Guild Members rows identify member events and complete-population classification/ACK needs; they do not imply that every aggregate count, report send, or database calculation independently requires that intent.
+The memberflow report combines scheduled member-count snapshots, FF-specific join classification, and stored RO activity. The Guild Members entries identify member events and complete-population classification/ACK needs; they do not imply that every aggregate count, report send, or database calculation independently requires that intent.
+
+## October 27 format and rationale update
+
+Converted all 40 existing cases into individual six-field entries, grouped by related workflows within each intent. Every case retains its function names and use case, adds a draft reason for the data access, and leaves the demo for TGC. Entry IDs allow TGC to refer to specific reasons while revising them. Code links point to the reviewed committed source; the local public-leader module is explicitly identified as uncommitted.
+
+The rationale distinguishes event triggers from actions such as editing nicknames or permissions, and shared-cache consumers from direct member-list requests. It also identifies the hourly sync-key reconciliation, five-minute public-leader refresh, possible member-search replacement, and native command-audit path so these are not presented as features with no alternatives. TGC will review the reasons and supply the demonstrations.
 
 ## Verification boundary
 
 This is a source/documentation review. It does not establish which checkout is running, whether the new commands are deployed/registered, whether Integrations visibility is configured, or whether any feature passed live testing. No production Discord calls, SQL mutations, bot restart, or deployment were performed.
 
-Published documentation was checked for four-column table structure, current function references, local document links, and public readback. No new bot-runtime test pass is asserted; the selected local Python interpreter did not have `discord.py` installed. Existing migration test files were inspected as supporting source, not presented as newly executed evidence.
+The reformatted documentation was checked for all 40 original function/use-case pairs, six fields per entry, empty demo placeholders, local document links, committed source-file references, and public readback. No new bot-runtime test pass is asserted; the selected local Python interpreter did not have `discord.py` installed during the source review. Existing migration test files were inspected as supporting source, not presented as newly executed evidence.
 
 Screenshots/videos, alternatives analysis, and finalized production privacy/retention/security answers remain to be added. A listed source dependency is not a claim that no alternative exists or that Discord will approve access.
