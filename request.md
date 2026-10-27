@@ -4,7 +4,13 @@
 
 Engineer Karl supports The Gaming Council's Discord community and staff. It records membership changes, reports memberflow, coordinates staff work, tracks acknowledgments, reports recruitment activity, maintains contribution and PTO records, handles support tickets and moderation evidence, and integrates Discord identities and permissions with TGC's game services.
 
-Memberflow is central to TGC's staff coordination. Staff use Karl's scheduled growth/decline reports and recruitment context to assess community health and organize recruitment work. Karl's memberflow alerts can address the responsible staff roles and enter the acknowledgment workflow, which identifies expected responders and missing acknowledgments. Losing this coordination would severely impair TGC's ability to organize recruitment and sustain the community.
+## Recruitment, ROs, and memberflow
+
+TGC staff make cold approaches to recruit people into the in-game guilds. Staff then reach out to existing guild members who are not in Discord, invite them into the community, and build relationships with them. TGC calls this second stage ROs, or reach-outs.
+
+Karl provides nightly recruitment and whisper leaderboards, a nightly RO leaderboard, and a nightly memberflow report. The activity reports show the work staff recorded; memberflow provides growth or decline feedback alongside that work. Leadership uses these reports to assign responsibilities, identify gaps, and assess whether recruitment and community-building efforts are accompanied by growth. Memberflow alerts can also enter the staff acknowledgment workflow.
+
+See [Recruitment, ROs, and memberflow](use-cases.md#recruitment-ros-and-memberflow) for the shared purpose and the functions that support this workflow.
 
 ## Which privileged intents are included?
 
@@ -29,4 +35,4 @@ Command receipts do not store command arguments, raw message bodies, attachment 
 
 ## Supporting use cases and evidence
 
-See [Privileged-intent use cases](use-cases.md) for each function, its Discord API or event dependency, its purpose, and the reason for access.
+See [Privileged-intent use cases](use-cases.md) for the workflows and their functions. Each workflow explains its operational purpose; each function identifies its intent, Discord API or event, use case, specific reason for access, and demo.
