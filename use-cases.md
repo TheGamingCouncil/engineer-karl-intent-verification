@@ -43,10 +43,6 @@
 
 </details>
 
-**Demo:**
-
-&lt;Text here will be replaced and is just a note for myself on what to do for the demos.&gt;
-
 **GM-15, GM-16 Demo:**
 
 - &lt;Screenshot: Live Whisper Count&gt;
@@ -65,11 +61,11 @@
 
 **Intent:** Guild Members; Message Content
 
-**Why:** Karl helps staff coordinate work, track completed tasks, and recognize contributions. Current roles determine who must acknowledge instructions, who belongs in staff reports, and who receives contest access or PTO—even when they have no recorded activity.
+**Why:** Karl helps staff coordinate work, track completed tasks, and recognize contributions. Current roles determine who must acknowledge instructions, who belongs in staff reports, and who should be involved in staff contests.
 
 | ID | Use case | Why access is needed |
 |---|---|---|
-| GM-12 | Set expected ACK recipients | Role membership identifies everyone expected to respond. |
+| GM-12 | Set expected ACK recipients | We require messages of importance to be acknowledged through an "ACK" emoji reaction by staff. This function helps us identify who in our team should be on the hook for reading these messages. |
 | GM-13 | Report missing ACKs | The saved recipient roster includes people who never react. |
 | MC-05 | Preserve ACK instructions | Announcement text records what staff acknowledged; Karl-authored alerts are exempt. |
 | GM-17 | Notify role members individually | The roster identifies human recipients. A role ping is an alternative. |
