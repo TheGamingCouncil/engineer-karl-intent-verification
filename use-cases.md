@@ -97,7 +97,40 @@
 
 </details>
 
-**Demo:**
+**GM-12, GM-13, MC-05 Demo:**
+
+- &lt;Screenshot of ping with ACK reactions&gt;
+- &lt;Screenshot of ACK audit post&gt;
+- &lt;Screenshot of website points for ACK pass/fail&gt;
+
+**GM-17 Demo:**
+
+- &lt;Screenshot of Zero to Hero use&gt;
+- &lt;Screenshot of Crown Seller use&gt;
+- &lt;Screenshot of Sept 2025 Tier Audit&gt;
+
+**GM-18 Demo:**
+
+- &lt;Screenshot of To-Do Pinned Post&gt;
+- &lt;Screenshot of it pinging me for the housing contest&gt;
+- &lt;Screenshot of Chex using it to ping his raid&gt;
+
+**GM-19, GM-20 Demo:**
+
+- &lt;Screenshot of Staff Contest posts&gt;
+
+**GM-21 Demo:**
+
+- &lt;Screenshot of Help Wanted post&gt;
+
+**GM-22 Demo:**
+
+- &lt;Screenshot of Help Wanted permissions&gt;
+
+**GM-23, GM-24 Demo:**
+
+- &lt;Screenshot of PTO being awarded&gt;
+- &lt;Screenshot of a PTO balance report&gt;
 
 ## Member identity, role history, and records
 
