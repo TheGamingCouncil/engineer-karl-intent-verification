@@ -21,12 +21,12 @@
 
 | ID | Use case | Why access is needed |
 |---|---|---|
-| GM-15 | Live reports of recruitment progress by responsible staff throughout the day. | The Discord function call tells us which staff members are in roles that are expected to recruit so we can record/report progress on their work. |
+| GM-15 | Live reports of recruitment progress by responsible staff throughout the day. | The Discord function call tells us which staff members are in roles that are expected to recruit so we can record/report live progress on their work. |
 | GM-16 | We have a nightly leaderboards of staff recruitment accomplished during the day. | The Discord function call allows us to identify the staff members on the team that does this task so we can build this leaderboard. |
 | GM-14 | We create a nightly leaderboard of staff members that have reached out to new members. To do this, we need to know who is responsible to be doing this community outreach. | Discord's function call allows us to identify the staff members that are on the team that does community outreach so we can build our leaderboard. |
-| GM-01 | Record Discord arrivals | Shows staff the names of people joining Discord each day, so they can follow up with those new members. |
-| GM-03 | Record Discord departures | Leave events identify who left and when. We require Discord membership, so if they leave our Discord, we kick them in-game as well. It also helps us identify when someone like a staff or event leader leaves, that way we can cover things they were supposed to be doing. |
-| GM-05 | Count FF-tagged joins | Join dates and FF roles identify the daily guild-specific population. |
+| GM-01 | We require Discord for guild membership. New members get removed from our guilds in-game if they do not join Discord. This tells the staff when they join so they can promote in-game. It also creates an account that can be linked with our Minecraft server and website for the user. Lastly, it helps staff understand which members are new so they can reach out to and do the knitting of a tightly-knit community. | The Discord function is used to tell us when a new member joins, their developer ID for use as a foreign key in other SQL tables, and what their name is. |
+| GM-03 | Leave events identify who left and when. We require Discord membership, so if they leave our Discord, we remove them from out community in-game as well. It also helps us identify when someone like a staff or event leader leaves, that way we can cover things they were supposed to be doing and may not have been handed off. Lastly, it will revoke login access to staff recruitment tools and the website. | The Discord function tells us who leaves, their developer ID which is used as a foreign key linking platforms and SQL tables, and triggers the closure of their TGC login access. |
+| GM-05 | Most of our members are coming from The Elder Scrolls Online; however, lately much progress growing has been being made by our Final Fantasy guild. This lets us know how many joined from the FF guild to differentiate progress, credit, and points between the staff teams on the two games. | The Discord function allows us to tell who is a member of our Final Fantasy guild versus who is a member of our Elder Scrolls Online guild. |
 
 <details>
 
