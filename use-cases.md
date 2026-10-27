@@ -66,16 +66,16 @@
 | ID | Use case | Why access is needed |
 |---|---|---|
 | GM-12 | Set expected ACK recipients | We require messages of importance to be acknowledged through an "ACK" emoji reaction by staff. This function helps us identify who in our team should be on the hook for reading these messages. |
-| GM-13 | Report missing ACKs | The saved recipient roster includes people who never react. |
-| MC-05 | Preserve ACK instructions | Announcement text records what staff acknowledged; Karl-authored alerts are exempt. |
-| GM-17 | Notify role members individually | The roster identifies human recipients. A role ping is an alternative. |
-| GM-18 | Limit reminder role size | Complete membership prevents undercounting the 100-member limit. |
-| GM-19 | Include zero-contribution participants | Roles and participation settings establish eligibility beyond activity records. |
-| GM-20 | Classify contest participants | Current roles determine staff and contributor categories. |
-| GM-21 | Calculate staffing ratios | Complete officer and team populations provide the counts. |
-| GM-22 | Maintain contest-channel access | Current roles and participation settings determine individual access. |
-| GM-23 | Award weekly PTO | Role populations identify every eligible member and their highest entitlement. |
-| GM-24 | Report staff PTO balances | Current staff roles establish whose balances to include. |
+| GM-13 | Report missing ACKs | This is a roster of people that have failed to do the "ACK" reaction mentioned above so we can reach out to the users individually to follow-up. |
+| MC-05 | Keep the staff message being acknowledged | Karl saves the original staff-written message with the ACK record so we can see what people were asked to read and acknowledge. |
+| GM-17 | Notify role members individually | This can be used for several purposes. 1 - Let us know who is in a role in a public way, as many members are non-technical and won't know to click on a role or go to server settings. 2 - It will ping members if authorized which can be used to bring people into threads or get their attention individually as an alternative to pinging a role that has role pings disabled. Karl has programming on who is allowed to use this command or not, which is an added level of security than just allowing anyone to @ mention a role. |
+| GM-18 | Limit reminder role size | Karl has a functionality similar to Microsoft-To Do. This prevents users from being able to abuse our ping functionality in here to spam the server recklessly or maliciously. |
+| GM-19 | Include contest participants with zero points | We need to include everyone who should be in the staff contest—even people who have earned zero points. Their Discord roles tell Karl who to include. |
+| GM-20 | Classify contest participants | We have a staff contest for in-game gold and public appreciation of staff. This function identifies someone's rank/status (inactive, full-time, part-time, etc) based on role for display in our contest leaderboard post. |
+| GM-21 | Calculate staffing ratios | We have a "staff-wanted" post that explains how understaffed we are, requesting for assistance from members by submitting staff applications. One of the arguments that we use is a live ratio of members to staff. This function comes up with that ratio. |
+| GM-22 | Maintain contest-channel access | We have been getting "hate raids" from a few rival guilds. This function uses configured roles to restrict view access to the staff-contest channel for people we consider high-risk. |
+| GM-23 | Award weekly PTO | We have a "PTO" system for staff to be able to pass their expectations even when they are away, for use during times like vacations. This command awards everyone on staff with some PTO to be used in the future. The Discord API is called when identifying who should be given PTO. |
+| GM-24 | Report staff PTO balances | This allows us to be able to see the PTO that staff have for use during periods away. The Discord API is called when identifying who should have PTO in the first place. |
 
 <details>
 
