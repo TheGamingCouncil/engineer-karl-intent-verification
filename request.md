@@ -2,7 +2,7 @@
 
 Engineer Karl supports The Gaming Council's in-game guilds and Discord community. It handles recruitment reporting, staff coordination, member records, contribution tracking, PTO, support tickets, and moderation evidence.
 
-Staff recruit players into the guilds, then use ROs (reach-outs) to invite existing members into Discord and build relationships. Nightly activity leaderboards and memberflow reports help leadership assign work and assess results.
+Staff use whispers to recruit players into the guilds, then ROs (reach-outs) to help those recruits participate in the community. Nightly activity leaderboards and memberflow reports help leadership assign work and assess results.
 
 ## Requested access
 

@@ -12,18 +12,22 @@
 
 **Intent:** Guild Members; Message Content
 
-**Why:** After leadership returned from deployment, our once-active in-game guilds had nearly emptied. Staff recruit players into the guilds, then use ROs (reach-outs) to bring existing members into Discord and build relationships. Nightly leaderboards and memberflow reports help us assign work and assess results; guild tags show each member's in-game guild.
+**Whispers = our recruitment.**
+
+**ROs = Reach Outs, which is staff trying to reel in recruited members to participate in the community more.**
+
+**Why:** After leadership returned from deployment, our once-active in-game guilds had nearly emptied. Nightly whisper and RO leaderboards show the staff's work. Memberflow reports show whether the community is growing or shrinking. We use these reports to assign work and assess results.
 
 | Use case | Why access is needed |
 |---|---|
-| Select recruitment-report participants | Role membership establishes the reporting population. |
-| Report staff with zero whispers | The eligible roster reveals people absent from activity records. |
-| Select eligible RO staff | Current roles establish who belongs on the RO leaderboard. |
-| Credit recruitment markers | Bridged text contains the recruitment marker and ESO account name. |
-| Flag recruitment-related chatter | Message text supplies keyword matches and context. |
+| Report recruitment work by responsible staff | We need to know which staff are expected to recruit so Karl can report their work. |
+| Report staff with zero whispers | The roster reveals staff members that are neglecting roles they committed to. |
+| Nightly RO leaderboard | Nightly we create a leaderboard of staff members that have reached out to new members. To do this, we need to know who is responsible to be doing this community outreach. |
+| MC-03: Credit `=D` messages from in-game chat | Karl reads messages copied from ESO into Discord, finds `=D`, matches the ESO name to a Discord member, and records duty credit. |
+| MC-04: Alert staff to recruitment-related chat | Karl reads messages copied from ESO into Discord and alerts staff when they contain words such as “invite,” “stop,” or “spam.” |
 | Match bridged ESO names | The fallback scans Discord names; member search is an alternative. |
-| Record Discord arrivals | Join events identify who arrived; totals alone cannot. |
-| Record Discord departures | Leave events identify who left and when. |
+| Record Discord arrivals | Shows staff the names of people joining Discord each day, so they can follow up with those new members. |
+| Record Discord departures | Leave events identify who left and when. We require Discord membership, so if they leave our Discord, we kick them in-game as well. It also helps us identify when someone like a staff or event leader leaves, that way we can cover things they were supposed to be doing. |
 | Count FF-tagged joins | Join dates and FF roles identify the daily guild-specific population. |
 
 <details>
