@@ -4,7 +4,7 @@
 - [Staffing and Project Management](#staffing-and-project-management)
 - [Member identity, role history, and records](#member-identity-role-history-and-records)
 - [Game-service access and public leader identities](#game-service-access-and-public-leader-identities)
-- [Message records, archives, tickets, and evidence](#message-records-archives-tickets-and-evidence)
+- [Karl (Help Desk) Tickets, Event/Raid Prestige Preservation, Incident Evidence](#karl-help-desk-tickets-eventraid-prestige-preservation-incident-evidence)
 - [Command-attempt auditing](#command-attempt-auditing)
 
 ## Recruitment, ROs, and memberflow
@@ -243,22 +243,34 @@
 - &lt;Screenshot of a user's name appearance in Discord&gt;
 - &lt;Screenshot of a user's name appearance on the Website&gt;
 
-## Message records, archives, tickets, and evidence
+## Karl (Help Desk) Tickets, Event/Raid Prestige Preservation, Incident Evidence
 
 **Intent:** Message Content
 
-**Why:** Staff need the conversation and files—not just author IDs—when reviewing incidents, closing tickets, or reusing channels. Karl preserves available content before it changes or disappears.
+**Why:** Staff need the conversation and files when reviewing incidents, handling tickets, or reusing channels. Karl preserves sensitive content before it changes or disappears.
+
+### Help Desk tickets
+
+| ID | Use case | Why access is needed |
+|---|---|---|
+| MC-09 | Archive closed tickets | Human-authored staff discussion and files need preservation. |
+
+### Incident evidence
 
 | ID | Use case | Why access is needed |
 |---|---|---|
 | MC-01 | Record message edits | Text and attachment context show what changed. |
 | MC-02 | Record message deletions | Previously cached content supplies what deletion events omit. |
+| MC-11 | Preserve compromised-account evidence | Image attachments must be downloaded before message removal. |
+
+### Event/raid preservation and archiving
+
+| ID | Use case | Why access is needed |
+|---|---|---|
 | MC-06 | Archive channels and threads | Historical text and attachments preserve the conversation. |
 | MC-07 | Archive before clearing | Content must be read before the source is cleared. |
 | MC-08 | Archive before event-channel reuse | Previous discussion and files must be preserved before reset. |
 | MC-10 | Download historical thread files | Historical attachment records identify the files to retrieve. |
-| MC-09 | Archive closed tickets | Human-authored staff discussion and files need preservation. |
-| MC-11 | Preserve compromised-account evidence | Image attachments must be downloaded before message removal. |
 
 <details>
 
@@ -266,14 +278,14 @@
 
 | ID | Intent / Discord API | Our function |
 |---|---|---|
+| MC-09 | Message Content: `Get Channel Messages` | `_archive_ticket_channel`, `karl_close` |
 | MC-01 | Message Content: `MESSAGE_CREATE`, `MESSAGE_UPDATE` | `on_message`, `on_message_edit` |
 | MC-02 | Message Content: `MESSAGE_CREATE` followed by `MESSAGE_DELETE` | `on_message`, `on_message_delete` |
+| MC-11 | Message Content: `Get Channel Messages` | `karl_compromised` |
 | MC-06 | Message Content: `Get Channel Messages` | `karl_archive` |
 | MC-07 | Message Content: `Get Channel Messages` | `clear_channel`, `karl_clear` |
 | MC-08 | Message Content: `Get Channel Messages` | `karl_reset` |
 | MC-10 | Message Content: `Get Channel Messages` | `download_thread_files` |
-| MC-09 | Message Content: `Get Channel Messages` | `_archive_ticket_channel`, `karl_close` |
-| MC-11 | Message Content: `Get Channel Messages` | `karl_compromised` |
 
 </details>
 
