@@ -197,7 +197,7 @@
 | ID | Use case | Why access is needed |
 |---|---|---|
 | MC-03 | Staff are encouraged to advertise events, raids, announcements, needed positions, etc. in our in-game chats. We have them use '=D' to notate these announcements which they get staff points for using. In-game chats are forwarded to Discord. From there, our Discord bot hunts for '=D'. When messages are detected, the Discord bot will find the user's name in the message string and credit them with staff points. | The Discord function allows our bot to hunt for official staff messages in the in-game chats, hunt for the sender of the message, and credit the staff member with staff points. |
-| GM-25 | Match ESO names for MC-03 credit | MC-03 needs this name match to award in-game chat-blast credit to the correct staff member. The fallback scans Discord names; member search is an alternative. |
+| GM-25 | This is part of the process explained above. This particular function is the component that matches in-game names to Discord names. | This Discord function allows Karl to credit the correct staff member with work done by searching the Discord server for members with a given name. |
 | MC-04 | Alert staff to recruitment-related chat | Karl reads messages copied from ESO into Discord and alerts staff when they contain words such as “invite,” “stop,” or “spam.” |
 | GM-26 | Revoke sync keys after departure | Leave events provide prompt cleanup; hourly reconciliation also checks membership. |
 | GM-27 | Revoke sync keys after role-based access loss | Member updates provide prompt revocation; hourly reconciliation remains a fallback. |
