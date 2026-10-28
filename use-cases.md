@@ -201,7 +201,7 @@
 | MC-04 | The developers of one of the games we play requested us to moderate for spam happening in our guilds. We also wanted to keep an eye out for poaching after hate raids. Karl reads messages copied from ESO into Discord and alerts staff when they contain words such as “invite,” “stop,” or “spam.” | The Discord function is used by Karl when reading in-game messages for relevant keywords. |
 | GM-26 | Revoke sync keys after departure | Leave events provide prompt cleanup; hourly reconciliation also checks membership. |
 | GM-27 | Revoke sync keys after role-based access loss | Member updates provide prompt revocation; hourly reconciliation remains a fallback. |
-| GM-28 | Refresh public leader identities | Member events accelerate updates; individual lookups and five-minute refreshes remain available. |
+| GM-28 | Keep website leader names and colours consistent with Discord. | The Discord member events tell Karl when a leader changes their name or roles, or leaves Discord, so it can update the names and role colours stored for the website. Karl also refreshes this information every five minutes. |
 
 <details>
 
