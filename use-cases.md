@@ -249,24 +249,12 @@
 
 **Why:** Staff need the conversation and files when reviewing incidents, handling tickets, or reusing channels. Karl preserves sensitive content before it changes or disappears.
 
-### Help Desk tickets
-
 | ID | Use case | Why access is needed |
 |---|---|---|
-| MC-09 | Archive closed tickets | Human-authored staff discussion and files need preservation. |
-
-### Incident evidence
-
-| ID | Use case | Why access is needed |
-|---|---|---|
-| MC-01 | Record message edits | Text and attachment context show what changed. |
-| MC-02 | Record message deletions | Previously cached content supplies what deletion events omit. |
+| MC-09 | Message content - Karl DMs act as a help desk. Sometimes members will create multiple tickets for related issues, so we track the message exchange between the user and staff. It also helps us when accounting for in-game gold that is used for reimbursing members or as a cost associated with the ticket as a project. | The Discord functions will allow us to read messages so we can take note of human-authored staff discussion, in-game gold accounting, and preservation of files related to the ticket. |
+| MC-01 | Message edits - Sometimes staff members make errors in messages they send in tickets to users. For Karl to be able to edit the message the staff member sent from him, he needs to be able to see the message edits that were made. | The Discord function allows our bot to know which messages forwarded in tickets were edited so it knows which messages it should edit and when. |
+| MC-02 | Message deletions - Staff members can access our website's SQL database directly from Discord. In the case that a member sends a malicious command and deletes it, some relevant message deletions are retained for security logging purposes. | The Discord function allows us to see malicious website/database/bot commands that threat actors have deleted to attempt stealth techniques such as MITRE ATT&CK T1070. |
 | MC-11 | Preserve compromised-account evidence | Image attachments must be downloaded before message removal. |
-
-### Event/raid preservation and archiving
-
-| ID | Use case | Why access is needed |
-|---|---|---|
 | MC-06 | Archive channels and threads | Historical text and attachments preserve the conversation. |
 | MC-07 | Archive before clearing | Content must be read before the source is cleared. |
 | MC-08 | Archive before event-channel reuse | Previous discussion and files must be preserved before reset. |
