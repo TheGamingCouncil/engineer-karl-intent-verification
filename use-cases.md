@@ -218,7 +218,30 @@
 
 </details>
 
-**Demo:**
+**MC-03, GM-25 Demo:**
+
+- &lt;Screenshot of messages in-game&gt;
+- &lt;Screenshot of messages appearing in the in-game chatter channel&gt;
+- &lt;Screenshot of Karl detecting '=D'&gt;
+- &lt;Screenshot of chat blasts on the website&gt;
+
+**MC-04 Demo:**
+
+- &lt;Screenshot of me saying "Dude stop spamming me"&gt;
+- &lt;Screenshot of that being in the in-game chatter channel&gt;
+- &lt;Screenshot of Karl pinging deadpotato, Syd, and I&gt;
+
+**GM-26, GM-27 Demo:**
+
+- &lt;Screenshot of a sync key being generated&gt;
+- &lt;Screenshot of a sync upload in use&gt;
+- &lt;Screenshot of a sync key being revoked after a role is stripped from someone&gt;
+- &lt;Screenshot of the sync not working after the fact&gt;
+
+**GM-28 Demo:**
+
+- &lt;Screenshot of a user's name appearance in Discord&gt;
+- &lt;Screenshot of a user's name appearance on the Website&gt;
 
 ## Message records, archives, tickets, and evidence
 
