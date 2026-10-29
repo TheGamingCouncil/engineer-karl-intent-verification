@@ -287,6 +287,27 @@
 - &lt;Screenshot of staff contest adjustment&gt;
 - &lt;Screenshot of bot commands being tracked&gt;
 
+**MC-11 Demo:**
+
+- &lt;Screenshot of the account compromise SOP going through the process&gt;
+
+**MC-06 Demo:**
+
+- &lt;Screenshot of an archived channel before and after&gt;
+
+**MC-07 Demo:**
+
+- &lt;Screenshot of Open Events and Open Runs&gt;
+- &lt;Screenshot of a channel before karl_reset&gt;
+- &lt;Screenshot of a channel after karl_reset&gt;
+- &lt;Screenshot of the archive after a reset&gt;
+
+**MC-10 Demo:**
+
+- &lt;Screenshot of a fake convo in a fake thread in a fake channel including code&gt;
+- &lt;Screenshot of a fake convo in the base fake channel including a generated photo&gt;
+- &lt;Screenshot of the channel in the archive&gt;
+
 ## Command-attempt auditing
 
 **Intent:** Message Content
