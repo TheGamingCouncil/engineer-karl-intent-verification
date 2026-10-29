@@ -297,7 +297,9 @@
 
 </details>
 
-**Demo:**
+**MC-12 Demo:**
+
+- &lt;Screenshot of the commands channel&gt;
 
 ## Discord references
 
