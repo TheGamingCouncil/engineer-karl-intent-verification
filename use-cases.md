@@ -254,11 +254,10 @@
 | MC-09 | Message content - Karl DMs act as a help desk. Sometimes members will create multiple tickets for related issues, so we track the message exchange between the user and staff. It also helps us when accounting for in-game gold that is used for reimbursing members or as a cost associated with the ticket as a project. | The Discord functions will allow us to read messages so we can take note of human-authored staff discussion, in-game gold accounting, and preservation of files related to the ticket. |
 | MC-01 | Message edits - Sometimes staff members make errors in messages they send in tickets to users. For Karl to be able to edit the message the staff member sent from him, he needs to be able to see the message edits that were made. | The Discord function allows our bot to know which messages forwarded in tickets were edited so it knows which messages it should edit and when. |
 | MC-02 | Message deletions - Staff members can access our website's SQL database directly from Discord. In the case that a member sends a malicious command and deletes it, some relevant message deletions are retained for security logging purposes. | The Discord function allows us to see malicious website/database/bot commands that threat actors have deleted to attempt stealth techniques such as MITRE ATT&CK T1070. |
-| MC-11 | Preserve compromised-account evidence | Image attachments must be downloaded before message removal. |
-| MC-06 | Archive channels and threads | Historical text and attachments preserve the conversation. |
-| MC-07 | Archive before clearing | Content must be read before the source is cleared. |
-| MC-08 | Archive before event-channel reuse | Previous discussion and files must be preserved before reset. |
-| MC-10 | Download historical thread files | Historical attachment records identify the files to retrieve. |
+| MC-11 | When accounts are compromised, we remove harmful messages while maintaining a record of what happened. | The Discord function allows us to potentially preserve attachments for recordkeeping. |
+| MC-06 | Sometimes we want to delete channels without losing the knowledge that was shared among them. It might be knowledge that doesn't exist anywhere else in the world. For preservation, we'll copy message bodies from one channel to an archive. Some archives are public, some archives are staff or owner-only. | The Discord function allows to see message bodies and attachments for potential preservation with archiving. |
+| MC-07 | We have requirements for engagement, and participation of raids or events count as engagement. However, our event/raid leaders like to use clean channels, and leaving old channels up isn't practical because of (1) channel limits and (2) visual clutter. To preserve record of engagement that members make that would fulfill minimum interaction requirements for membership, we archive event and raid channels before resetting them to a fresh channel. These archives can be searched later when we are seeing if a member has been active or not. | The Discord function allows us to see players that participate in raids/events, their roles, and times of their participation for use with our activity requirement policy. |
+| MC-10 | We use threads in an extended table to come up with systems, policies, game addons, etc. Sometimes there is knowledge shared in those threads that we want to preserve, but we want to remove a channel or clean up a thread for a situational reason. This function allows us to preserve knowledge, development code, and other files in productivity exchanges. These are archived to private channels that are either staff or owner-only. | The Discord function allows us to grab bits of written code, pictures that our digital designers created, and meeting conversations/notes. |
 
 <details>
 
@@ -271,8 +270,7 @@
 | MC-02 | Message Content: `MESSAGE_CREATE` followed by `MESSAGE_DELETE` | `on_message`, `on_message_delete` |
 | MC-11 | Message Content: `Get Channel Messages` | `karl_compromised` |
 | MC-06 | Message Content: `Get Channel Messages` | `karl_archive` |
-| MC-07 | Message Content: `Get Channel Messages` | `clear_channel`, `karl_clear` |
-| MC-08 | Message Content: `Get Channel Messages` | `karl_reset` |
+| MC-07 | Message Content: `Get Channel Messages` | `clear_channel`, `karl_clear`, `karl_reset` |
 | MC-10 | Message Content: `Get Channel Messages` | `download_thread_files` |
 
 </details>
@@ -283,11 +281,11 @@
 
 **Intent:** Message Content
 
-**Why:** Staff audit attempts to use old text commands, even though those commands no longer execute. Receipts retain command metadata without message bodies or arguments.
+**Why:** Staff keep command-attempt records to investigate suspicious or malicious attempts to abuse Karl. Records identify the account, command name, time, and location without storing message bodies or arguments.
 
 | ID | Use case | Why access is needed |
 |---|---|---|
-| MC-12 | Audit old text-command attempts | Recognizing typed command names needs content; native slash receipts do not. |
+| MC-12 | We keep records of command attempts so staff can investigate suspected abuse of Karl and identify the accounts involved. | The Discord function allows Karl to recognize command names typed into messages and record who attempted them, when, and where. Native slash-command receipts do not require Message Content. |
 
 <details>
 
