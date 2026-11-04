@@ -71,7 +71,17 @@
 
 **GM-01, GM-03, GM-05 Demo:**
 
-- &lt;Screenshot: Nightly memberflow leaderboard&gt;
+<details>
+
+<summary>Nightly memberflow (1 screenshot)</summary>
+
+**BLUF** - The Discord functions allow us to make a nightly memberflow post, which we use to see the changes in server member count so we can see the direct impact of our efforts on recruitment and community outreach. It also sees who joins with ESO/FF/SWTOR roles so we know how much progress can be attributed to which teams.
+
+**Screenshot 1** — Memberflow leaderboard, posted right next to the whispers (recruitment) and RO (community outreach) efforts so staff can see a direct impact of effort.
+
+![Nightly memberflow alongside recruitment and community outreach leaderboards](assets/demos/memberflow/01-nightly-memberflow.png)
+
+</details>
 
 ## Staffing and Project Management
 
