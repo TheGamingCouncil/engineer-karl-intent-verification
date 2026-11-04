@@ -281,6 +281,8 @@
 
 <summary>Ticket process — November 3, 2026 (8 screenshots)</summary>
 
+**DEMO BLUF** - The Karl message content is used when moving messages back and fourth between Karl and users that need to talk to him. It's also used when preserving evidence that gets referenced in times such as ban appeals, project management, code/policy development, rule enforcement, etc.
+
 **Screenshot 1** — Ticket category with existing tickets as of November 3, 2026.
 
 ![Ticket demonstration screenshot 1](assets/demos/tickets/01-ticket-category.png)
