@@ -131,9 +131,21 @@
 
 **GM-17 Demo:**
 
-- &lt;Screenshot of Zero to Hero use&gt;
-- &lt;Screenshot of Crown Seller use&gt;
-- &lt;Screenshot of Sept 2025 Tier Audit&gt;
+<details>
+
+<summary>Role lists and tier audits (2 screenshots)</summary>
+
+**BLUF** - We have the Discord bot ping a list of members for quick tag adjustment or to show who is in a role. This is never used to actually ping people, it's normally done in admin channels backstage.
+
+**Screenshot 1** — An audit we did of player performance/skill/endgame "tiers" - It pinged the users in a channel they could not see so admins could raise or lower their ranks.
+
+![Player tier audit in an admin channel](assets/demos/role-lists/01-tier-audit.png)
+
+**Screenshot 2** — In a channel the users couldn't see, I had listed users that are in a role. This was so that way I could (1) know who was in each of these two teams and (2) quickly adjust their tags, as we were migrating from one rank system to another.
+
+![Role member lists used during a rank-system migration](assets/demos/role-lists/02-rank-migration.png)
+
+</details>
 
 **GM-18 Demo:**
 
