@@ -149,9 +149,25 @@
 
 **GM-18 Demo:**
 
-- &lt;Screenshot of To-Do Pinned Post&gt;
-- &lt;Screenshot of it pinging me for the housing contest&gt;
-- &lt;Screenshot of Chex using it to ping his raid&gt;
+<details>
+
+<summary>Karl To-Do (1 screenshot; 2 placeholders)</summary>
+
+**BLUF** - I did my best to write a Discord clone of To-Do for staff to use when managing projects.
+
+**Screenshot 1** — Our how-to post on Karl To-Do
+
+![Karl To-Do how-to post](assets/demos/to-do/01-how-to-post.png)
+
+**Screenshot 2**
+
+&lt;Screenshot of it pinging me for the housing contest&gt;
+
+**Screenshot 3**
+
+&lt;Screenshot of Chex using it to ping his raid&gt;
+
+</details>
 
 **GM-19, GM-20 Demo:**
 
