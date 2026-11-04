@@ -47,15 +47,27 @@
 
 </details>
 
-**GM-15, GM-16 Demo:**
+**GM-15, GM-14, GM-16 Demo:**
 
-- &lt;Screenshot: Live Whisper Count&gt;
-- &lt;Screenshot: Total Whisper Count&gt;
-- &lt;Screenshot: Nightly Whisper Leaderboard&gt;
+<details>
 
-**GM-14 Demo:**
+<summary>Whisper counts and nightly leaderboards (3 screenshots)</summary>
 
-- &lt;Screenshot: Nightly RO Leaderboard&gt;
+**BLUF** - The bot uses member intents when viewing who is in roles so it knows who to be building these daily leaderboards out of.
+
+**Screenshot 1** — Live Whisper Counts
+
+![Recruitment and outreach demonstration screenshot 1](assets/demos/recruitment/01-live-whisper-counts.png)
+
+**Screenshot 2** — All-time whisper counts.
+
+![Recruitment and outreach demonstration screenshot 2](assets/demos/recruitment/02-all-time-whisper-counts.png)
+
+**Screenshot 3** — Nightly RO Leaderboard, Nightly Whisper (Recruitment) Leaderboard
+
+![Recruitment and outreach demonstration screenshot 3](assets/demos/recruitment/03-nightly-ro-whisper-leaderboards.png)
+
+</details>
 
 **GM-01, GM-03, GM-05 Demo:**
 
