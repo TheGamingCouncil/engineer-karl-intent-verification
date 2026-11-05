@@ -6,6 +6,7 @@
 - [Game-service access and public leader identities](#game-service-access-and-public-leader-identities)
 - [Karl (Help Desk) Tickets, Event/Raid Prestige Preservation, Incident Evidence](#karl-help-desk-tickets-eventraid-prestige-preservation-incident-evidence)
 - [Command-attempt auditing](#command-attempt-auditing)
+- [Website activity statistics](#website-activity-statistics)
 
 ## Recruitment, ROs, and memberflow
 
@@ -437,6 +438,40 @@
 **MC-12 Demo:**
 
 - &lt;Screenshot of the commands channel&gt;
+
+## Website activity statistics
+
+**Intent:** Guild Voice States (standard; no privileged approval required).
+
+**Why:** Our website turns activity recorded by Karl into visual statistics. Voice-hours charts show how community participation changes over time, alongside our recruitment and memberflow reports.
+
+| ID | Use case | Why access is needed |
+|---|---|---|
+| VS-01 | Karl records when members join, move between, and leave voice channels. Our website uses these sessions to chart voice hours over time. | Discord voice-state events identify the member and channel changes so Karl can record session times and calculate time spent in voice. |
+
+<details>
+
+<summary>Functions and Discord APIs</summary>
+
+| ID | Intent / Discord API | Our function |
+|---|---|---|
+| VS-01 | Guild Voice States: [`VOICE_STATE_UPDATE`](https://docs.discord.com/developers/events/gateway#list-of-intents) | `on_voice_state_update`, `update_database_session` |
+
+</details>
+
+**VS-01 Demo:**
+
+<details>
+
+<summary>Website voice-hours chart (1 screenshot)</summary>
+
+**BLUF** - Our website creates visual statistics on our Discord activity using voice-session records collected by Karl.
+
+**Screenshot 1** — Voice hours over time on our website.
+
+![Website voice-hours chart from May to November 2026](assets/demos/activity-statistics/01-voice-hours-over-time.png)
+
+</details>
 
 ## Discord references
 
