@@ -329,41 +329,35 @@
 
 <details>
 
-<summary>Ticket process — November 3, 2026 (8 screenshots)</summary>
+<summary>Ticket process — November 3, 2026 (8 stages)</summary>
 
 **DEMO BLUF** - The Karl message content is used when moving messages back and fourth between Karl and users that need to talk to him. It's also used when preserving evidence that gets referenced in times such as ban appeals, project management, code/policy development, rule enforcement, etc.
 
-**Screenshot 1** — Ticket category with existing tickets as of November 3, 2026.
+**Stage 1** — Ticket category with existing tickets as of November 3, 2026.
 
-![Ticket demonstration screenshot 1](assets/demos/tickets/01-ticket-category.png)
+![Ticket demonstration stage 1](assets/demos/tickets/01-ticket-category.png)
 
-**Screenshot 2** — A user sends a message to Karl in DMs.
+**Stages 2–6**
 
-![Ticket demonstration screenshot 2](assets/demos/tickets/02-user-dm.png)
+![Ticket demonstration stages 2 through 6](assets/demos/tickets/02-06-ticket-workflow.gif)
 
-**Screenshot 3** — Karl creates a private ticket channel and forwards the user's message into it. Staff can discuss the ticket privately without forwarding those messages to the user.
+**Stage 2** — A user sends a message to Karl in DMs.
 
-![Ticket demonstration screenshot 3](assets/demos/tickets/03-ticket-created.png)
+**Stage 3** — Karl creates a private ticket channel and forwards the user's message into it. Staff can discuss the ticket privately without forwarding those messages to the user.
 
-**Screenshot 4** — Staff use Karl's native `/karl_send` integration to forward replies and attachments to the user.
+**Stage 4** — Staff use Karl's native `/karl_send` integration to forward replies and attachments to the user.
 
-![Ticket demonstration screenshot 4](assets/demos/tickets/04-staff-send-integration.png)
+**Stage 5** — Post-send, server-side: the delivered staff reply and attachment appear in the ticket channel.
 
-**Screenshot 5** — Post-send, server-side: the delivered staff reply and attachment appear in the ticket channel.
+**Stage 6** — Post-send, client-side: the user receives the reply and attachment in DMs.
 
-![Ticket demonstration screenshot 5](assets/demos/tickets/05-staff-side-reply.png)
+**Stage 7** — Staff use `/karl_close` to close the ticket and start archiving.
 
-**Screenshot 6** — Post-send, client-side: the user receives the reply and attachment in DMs.
+![Ticket demonstration stage 7](assets/demos/tickets/07-close-ticket.png)
 
-![Ticket demonstration screenshot 6](assets/demos/tickets/06-user-side-reply.png)
+**Stage 8** — The command archives the channel to a private thread. This helps retain information and evidence that comes in handy during project management, code/policy development, rule enforcement, etc.
 
-**Screenshot 7** — Staff use `/karl_close` to close the ticket and start archiving.
-
-![Ticket demonstration screenshot 7](assets/demos/tickets/07-close-ticket.png)
-
-**Screenshot 8** — The command archives the channel to a private thread. This helps retain information and evidence that comes in handy during project management, code/policy development, rule enforcement, etc.
-
-![Ticket demonstration screenshot 8](assets/demos/tickets/08-private-thread-archive.png)
+![Ticket demonstration stage 8](assets/demos/tickets/08-private-thread-archive.png)
 
 </details>
 
