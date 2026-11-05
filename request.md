@@ -6,7 +6,7 @@ Staff use whispers to recruit players into the guilds, then ROs (reach-outs) to 
 
 ## Requested access
 
-- **Guild Members:** Membership events and role populations for reports, staff eligibility, acknowledgments, records, and service access.
+- **Guild Members:** Membership events and role populations for reports, staff eligibility, acknowledgments, records, username blacklist alerts on join, and service access.
 - **Message Content:** Bridged recruitment chatter, announcement text, message records, archives, ticket discussions, attachments, and security review of text-command attempts.
 
 Command receipts store who invoked which command, when, and where. They do not store arguments, message bodies, attachments, or interaction tokens.

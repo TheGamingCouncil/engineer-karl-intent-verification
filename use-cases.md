@@ -190,10 +190,11 @@
 
 **Intent:** Guild Members
 
-**Why:** Staff must continue to recognize members as names and roles change. Karl maintains identity history, role records, and ESO qualifications, including for members who never run commands. We also keep track of who was somewhere at a certain time in the case of rule enforcement. Members log into our website with their Discord account, and their Discord roles determine their level of access.
+**Why:** Staff must continue to recognize members as names and roles change. Karl maintains identity history, role records, and ESO qualifications, including for members who never run commands. We also keep track of who was somewhere at a certain time in the case of rule enforcement. Karl alerts staff when a joining username matches our blacklist. Members log into our website with their Discord account, and their Discord roles determine their level of access.
 
 | ID | Use case | Why access is needed |
 |---|---|---|
+| GM-29 | Karl compares joining users' usernames against our blacklist and warns staff in a private channel when a name matches. Staff can then review the account and take action. | The Discord member-join event tells Karl who joined and their username, so it can check the blacklist and alert staff without waiting for the user to run a command. |
 | GM-07 | When users' roles are updated, we log a change. There has been people abusing roles and "spying" on us in the past, they have given themselves premium tiers that they didn't earn, and this also leaves us a papertrail of who had which roles when they return to the server after we go through our account compromise SOP. | The Discord functions show us roles before and after a user being updated. |
 | GM-08 | We have one user that had been abusing his role permissions to give himself roles he absolutely should not have been having, persisting after several warnings. This function pings leadership in a private channel to report it to us. | Discord functions show us the roles of the user that were added and alert us. |
 | GM-09 | We do a weekly database sync between our Discord, website, Minecraft server, FF plugins, and ESO addons. | Discord functions show us the member data that we are looking for, specifically names, dev ID, which games they play, and the ranks they should have in-game. |
@@ -206,11 +207,34 @@
 
 | ID | Intent / Discord API | Our function |
 |---|---|---|
+| GM-29 | Guild Members: [`GUILD_MEMBER_ADD`](https://docs.discord.com/developers/events/gateway-events#guild-member-add) | Member-join username blacklist check and staff warning |
 | GM-07 | Guild Members: `GUILD_MEMBER_UPDATE` | `log_member_update` |
 | GM-08 | Guild Members: `GUILD_MEMBER_UPDATE` | `Chex_stop_it` |
 | GM-09 | Guild Members: `Request Guild Members` | `_sync_discord_users` |
 | GM-10 | Guild Members: `Request Guild Members` | `_sync_eso_users` |
 | GM-11 | Guild Members: `Request Guild Members` | `update_roles` |
+
+</details>
+
+**GM-29 Demo:**
+
+<details>
+
+<summary>Username blacklist alert on join (3 screenshots)</summary>
+
+**BLUF** - Karl checks the username of each joining member against our blacklist and warns staff in a private channel when it finds a match.
+
+**Screenshot 1** — A user joining the server.
+
+![A member joins the Discord server](assets/demos/blacklist/01-user-joining.png)
+
+**Screenshot 2** — The user's account.
+
+![The joining account's display name and username](assets/demos/blacklist/02-user-account.png)
+
+**Screenshot 3** — The warning from Karl in a staff channel.
+
+![Karl warns staff that the joining username matches the blacklist](assets/demos/blacklist/03-staff-warning.png)
 
 </details>
 
