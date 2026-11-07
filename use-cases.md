@@ -397,7 +397,7 @@
 
 <details>
 
-<summary>Compromised-account evidence preservation (3 stages)</summary>
+<summary>Compromised-account evidence preservation (4 stages)</summary>
 
 **BLUF** - Karl preserves evidence from compromised accounts so staff can review what happened after harmful messages are removed.
 
@@ -409,7 +409,9 @@
 
 **Stage 3** — Karl collecting evidence.
 
-Original images: [Stage 1](assets/demos/compromised-accounts/01-compromised-account.png), [Stage 2](assets/demos/compromised-accounts/02-command.png), [Stage 3](assets/demos/compromised-accounts/03-evidence-collection.png).
+**Stage 4** — Prior to kicking, Karl reaches out to the user via DMs with an invite link and reports to us their roles so we can get them set up after their account has been recovered.
+
+Original images: [Stage 1](assets/demos/compromised-accounts/01-compromised-account.png), [Stage 2](assets/demos/compromised-accounts/02-command.png), [Stage 3](assets/demos/compromised-accounts/03-evidence-collection.png), [Stage 4](assets/demos/compromised-accounts/04-recovery-role-snapshot.png).
 
 </details>
 
