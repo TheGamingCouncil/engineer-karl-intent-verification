@@ -395,7 +395,23 @@
 
 **MC-11 Demo:**
 
-- &lt;Screenshot of the account compromise SOP going through the process&gt;
+<details>
+
+<summary>Compromised-account evidence preservation (3 stages)</summary>
+
+**BLUF** - Karl preserves evidence from compromised accounts so staff can review what happened after harmful messages are removed.
+
+![Karl compromised-account response and evidence collection](assets/demos/compromised-accounts/karl-compromised-account-demo.gif)
+
+**Stage 1** — A compromised account.
+
+**Stage 2** — The command.
+
+**Stage 3** — Karl collecting evidence.
+
+Original images: [Stage 1](assets/demos/compromised-accounts/01-compromised-account.png), [Stage 2](assets/demos/compromised-accounts/02-command.png), [Stage 3](assets/demos/compromised-accounts/03-evidence-collection.png).
+
+</details>
 
 **MC-06 Demo:**
 
